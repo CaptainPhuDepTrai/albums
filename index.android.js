@@ -5,10 +5,14 @@
 import React from 'react';
 import {Text,AppRegistry} from 'react-native';
 import Header from './src/components/header';
+import AlbumList from './src/components/AlbumList';
 // Create a component 
 
 const App =() => (
-    <Header />
+    <View>
+    	<Header headerText={'Albums'} />
+    	<AlbumList/>
+    </View>
 );
 
 

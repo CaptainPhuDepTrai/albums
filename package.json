@@ -7,6 +7,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "android": "0.0.8",
+    "ax": "^0.2.2",
+    "axios": "^0.16.1",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.0"
   },
