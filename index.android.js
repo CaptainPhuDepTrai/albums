@@ -1,24 +1,28 @@
-//  place code in here for android !! 
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+} from 'react-native';
+import Home from './components/Home.js'
+import About from './components/About.js'
+import { Navigator } from 'react-native-deprecated-custom-components';
+
+export default class MyHome extends Component {
+  renderScene(route, navigator) {
+
+    switch (route.name) {
+      case 'Home': return (<Home clickAbout={() => navigator.push({ name: 'About' })} />);
+      case 'About': return (<About clickHome={() => navigator.pop({ name: 'Home' })} />);
+    }
+  }
+  render() {
+    return (
+      <Navigator
+        initialRoute={{ name: 'Home' }}
+        renderScene={this.renderScene}
+      />
+    );
+  }
+}
 
 
-// Immport a library to hepl create c component 
-import React from 'react';
-import {Text,AppRegistry} from 'react-native';
-import Header from './src/components/header';
-import AlbumList from './src/components/AlbumList';
-// Create a component 
-
-const App =() => (
-    <View>
-    	<Header headerText={'Albums'} />
-    	<AlbumList/>
-    </View>
-);
-
-
-
-
-// Render it to tge device
-
-AppRegistry.registerComponent('albums', ()=> App);
-
+AppRegistry.registerComponent('MyHome', () => MyHome);
